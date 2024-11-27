@@ -37,7 +37,7 @@ const ReactionButton: React.FC<ReactionButtonProps> = ({
   const navigate = useNavigate();
 
   const [addReaction, { loading: addLoading }] = useMutation(ADD_REACTION, {
-    refetchQueries: ["GetPost"],
+    refetchQueries: ["GetPost", "GetPosts"],
     optimisticResponse: {
       addReaction: {
         status: "SUCCESS",
@@ -55,7 +55,7 @@ const ReactionButton: React.FC<ReactionButtonProps> = ({
   const [removeReaction, { loading: removeLoading }] = useMutation(
     REMOVE_REACTION,
     {
-      refetchQueries: ["GetPost"],
+      refetchQueries: ["GetPost", "GetPosts"],
       optimisticResponse: {
         removeReaction: {
           status: "SUCCESS",

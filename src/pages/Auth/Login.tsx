@@ -12,7 +12,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { setAuthToken } from "@/lib/apollo";
-import { log } from "console";
 
 const LOGIN_MUTATION = gql`
   mutation LoginNetwork($input: LoginNetworkWithPasswordInput!) {

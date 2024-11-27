@@ -11,8 +11,8 @@ export default defineConfig({
         changeOrigin: true,
         secure: true,
         rewrite: (path) => path.replace(/^\/graphql/, ""),
-        configure: (proxy, _options) => {
-          proxy.on("proxyReq", (proxyReq, req, _res) => {
+        configure: (proxy) => {
+          proxy.on("proxyReq", (proxyReq, req) => {
             // Set required headers for BetterMode API
             proxyReq.setHeader(
               "X-Network-Domain",
